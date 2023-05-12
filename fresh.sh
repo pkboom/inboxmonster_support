@@ -2,8 +2,6 @@
 
 echo "Setting up Mac..."
 
-/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
-
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo 'eval "$(/usr/local/bin/brew shellenv)"' >>$HOME/.zprofile
