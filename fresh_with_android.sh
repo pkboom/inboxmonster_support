@@ -12,9 +12,6 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
-# Install oh my zsh
-/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
-
 mkdir $HOME/code
 
 git clone git@github.com:InboxMonster/rendering-ios.git $HOME/code/rendering-ios
