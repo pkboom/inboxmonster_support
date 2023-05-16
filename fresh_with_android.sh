@@ -22,8 +22,6 @@ npm i
 
 npm install pm2@latest -g
 
-source $HOME/.macos
-
 brew install Python
 ln -sf $(readlink $(which python3)) $(dirname $(which python3))/python
 pip3 install pyautogui Pillow opencv-python
@@ -34,6 +32,7 @@ brew tap homebrew/cask-versions
 brew install android-studio-preview-beta
 
 echo "export PATH=$HOME/Library/Android/sdk/emulator:$PATH" >>~/.zshrc
+echo "export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH" >>~/.zshrc
 
 GREEN='\033[1;32m'
 NC='\033[0m' # No Color
@@ -51,3 +50,7 @@ echo -e "${GREEN}emulator path${NC} exported"
 echo -e "${GREEN}✓ Done${NC}"
 echo
 echo -e "Go to ${GREEN}https://github.com/InboxMonster/rendering-ios/tree/main/android#set-up-emulator-and-app${NC}"
+
+read -p "Press enter to continue"
+
+source $HOME/.macos
