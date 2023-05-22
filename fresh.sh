@@ -1,26 +1,26 @@
 #!/bin/bash
 
-# echo "Setting up Mac..."
+echo "Setting up Mac..."
 
-# # Install brew
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# echo 'eval "$(/usr/local/bin/brew shellenv)"' >>$HOME/.zprofile
-# eval "$(/usr/local/bin/brew shellenv)"
+echo 'eval "$(/usr/local/bin/brew shellenv)"' >>$HOME/.zprofile
+eval "$(/usr/local/bin/brew shellenv)"
 
-# brew update
-# brew tap homebrew/bundle
-# brew bundle --file ./Brewfile
+brew update
+brew tap homebrew/bundle
+brew bundle --file ./Brewfile
 
-# mkdir $HOME/code
+mkdir $HOME/code
 
-# git clone git@github.com:InboxMonster/rendering-ios.git $HOME/code/rendering-ios
+git clone git@github.com:InboxMonster/rendering-ios.git $HOME/code/rendering-ios
 
-# cd $HOME/code/rendering-ios
+cd $HOME/code/rendering-ios
 
-# npm i
+npm i
 
-# npm install pm2@latest -g
+npm install pm2@latest -g
 
 GREEN='\033[1;32m'
 NC='\033[0m' # No Color
