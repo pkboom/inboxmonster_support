@@ -31,8 +31,7 @@ brew install cliclick
 brew tap homebrew/cask-versions
 brew install android-studio-preview-beta
 
-echo "export PATH=$HOME/Library/Android/sdk/emulator:$PATH" >>~/.zshrc
-echo "export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH" >>~/.zshrc
+echo "export PATH=\"$HOME/Library/Android/sdk/emulator:$HOME/Library/Android/sdk/platform-tools:$PATH\"" >>~/.zshrc
 
 GREEN='\033[1;32m'
 NC='\033[0m' # No Color
