@@ -48,7 +48,7 @@ echo -e "${GREEN}android-studio-preview-beta${NC} installed"
 echo -e "${GREEN}emulator path${NC} exported"
 echo -e "${GREEN}✓ Done${NC}"
 echo
-echo -e "Go to ${GREEN}https://github.com/InboxMonster/rendering-ios/tree/main/android#set-up-emulator-and-app${NC}"
+echo -e "Go to ${GREEN}https://github.com/InboxMonster/rendering-ios/tree/main/setup#set-up${NC}"
 
 read -p "Press enter to continue"
 
