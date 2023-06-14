@@ -18,6 +18,8 @@ git clone git@github.com:InboxMonster/rendering-ios.git $HOME/code/rendering-ios
 
 cd $HOME/code/rendering-ios
 
+cp .env.example .env
+
 npm i
 
 npm install pm2@latest -g
