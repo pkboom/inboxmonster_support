@@ -10,7 +10,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew update
 brew tap homebrew/bundle
-brew bundle --file ./Brewfile_desktop
+brew bundle --file ./Brewfile_web
 
 mkdir $HOME/code
 
