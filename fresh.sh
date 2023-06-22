@@ -10,7 +10,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew update
 brew tap homebrew/bundle
-brew bundle --file ./Brewfile_web
+brew bundle --file ./Brewfile
 
 mkdir $HOME/code
 
@@ -23,6 +23,11 @@ cp .env.example .env
 npm i
 
 npm install pm2@latest -g
+
+ln -sf $(readlink $(which python3)) $(dirname $(which python3))/python
+pip3 install pyautogui Pillow opencv-python pytesseract
+
+echo "export PATH=\"\$HOME/Library/Android/sdk/emulator:\$HOME/Library/Android/sdk/platform-tools:\$PATH\"" >>~/.zshrc
 
 GREEN='\033[1;32m'
 NC='\033[0m' # No Color
