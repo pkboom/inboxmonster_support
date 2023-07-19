@@ -23,6 +23,8 @@ cp .env.example .env
 npm i
 
 npm install -g pm2
+npm install -g appium
+appium driver install xcuitest
 
 ln -sf $(readlink $(which python3)) $(dirname $(which python3))/python
 pip3 install pyautogui
@@ -32,6 +34,7 @@ echo "export PATH=\"\$HOME/Library/Android/sdk/emulator:\$HOME/Library/Android/s
 GREEN='\033[1;32m'
 NC='\033[0m' # No Color
 
+echo -e "${GREEN}Installing appium and stuff for ios rendering...${NC}"
 echo -e "${GREEN}✓ Done${NC}"
 echo
 
