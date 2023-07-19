@@ -25,7 +25,7 @@ npm i
 npm install -g pm2
 
 ln -sf $(readlink $(which python3)) $(dirname $(which python3))/python
-pip3 install pyautogui Pillow opencv-python pytesseract
+pip3 install pyautogui
 
 echo "export PATH=\"\$HOME/Library/Android/sdk/emulator:\$HOME/Library/Android/sdk/platform-tools:\$PATH\"" >>~/.zshrc
 
