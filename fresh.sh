@@ -25,9 +25,9 @@ npm i
 npm install -g pm2
 npm install -g appium
 appium driver install xcuitest
+appium driver install uiautomator2
 
-ln -sf $(readlink $(which python3)) $(dirname $(which python3))/python
-pip3 install pyautogui
+pip3 install pyautogui Pillow opencv-python
 
 echo "export PATH=\"\$HOME/Library/Android/sdk/emulator:\$HOME/Library/Android/sdk/platform-tools:\$PATH\"" >>~/.zshrc
 
