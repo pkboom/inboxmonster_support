@@ -4,7 +4,7 @@ ui = auto
 confilctstyle = diff3
 [core]
 editor = vim -f
-excludesfile = /Users/keunbae/.gitignore_global
+excludesfile = /Users/rendering/.gitignore_global
 [credetial]
 helper = cache
 [push]
