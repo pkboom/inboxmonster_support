@@ -1,24 +1,29 @@
-# Setup
+# Set up mac server
 
-Open vnc
+### Open vnc
 
 ```sh
 open vnc://Administrator:password@remote_host
+
+#e.g.
+open vnc://Administrator:RCR68hfP@208.52.168.11
 ```
 
-Create a user `rendering` as admin
+### Create a user `rendering` as admin
 
-Log out and in as `rendering`
+Password: IMrendering#132
 
-Set up mac
+### Log out and log in as `rendering`
 
-Insntall xcode
+### Configure new server
+
+### Insntall xcode
 
 ```sh
 xcode-select --install
 ```
 
-Download
+### Download files
 
 ```sh
 cd ~
@@ -28,47 +33,39 @@ curl \
 -O https://raw.githubusercontent.com/pkboom/im-support/master/.gitconfig \
 -O https://raw.githubusercontent.com/pkboom/im-support/master/.macos \
 -O https://raw.githubusercontent.com/pkboom/im-support/master/Brewfile \
--O https://raw.githubusercontent.com/pkboom/im-support/master/fresh.sh \
-chmod +x ssh.sh fresh_desktop.sh
+-O https://raw.githubusercontent.com/pkboom/im-support/master/fresh.sh &&
+chmod +x ssh.sh fresh.sh
 ```
 
-Create ssh
+### Create ssh
 
 ```sh
 ./ssh.sh
 ```
 
-> Register a public key as a deploy key on Github
+> https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac
 
-https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac
+### Register a public key as a deploy key on Github
 
-Install oh my zsh
+```sh
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+> Give a public key to Jeff
+
+### Install oh my zsh
 
 ```sh
 /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 ```
 
-Install for desktop
+### Install stuff
 
 ```sh
-./fresh_desktop.sh
+./fresh.sh
 ```
 
-Install for android
-
-```
-./fresh_android.sh
-```
-
-Install for web
-
-```
-./fresh_web.sh
-```
-
-# Set up
-
-Configure iterm2
+### Configure iterm2
 
 <img src="/doc/iterm1.png" width="600">
 
@@ -80,7 +77,20 @@ Configure iterm2
 
 <img src="/doc/iterm5.png" width="300"> <img src="/doc/iterm6.png" width="300">
 
-Copy your public key to servers
+### Add new hosts
+
+```js
+// setup/sshCopy.js
+
+let hosts = [
+  {
+    username: 'rendering',
+    remote_host: '208.52.168.11',
+  },
+]
+```
+
+### Copy your public key to servers
 
 ```sh
 node setup/sshCopy.js
@@ -88,7 +98,11 @@ node setup/sshCopy.js
 
 > Now you can ssh into servers.
 
-Configure ansible
+# Set up ansible
+
+> Only once. if it is set up already, don't do this.
+
+### Configure ansible
 
 ```sh
 ansible-config init --disabled > ansible.cfg
@@ -101,13 +115,13 @@ interpreter_python=auto_silent
 display_skipped_hosts=False
 ```
 
-list of inventory
+### list of inventory
 
 ```sh
 ansible-inventory -i setup/inventory --list
 ```
 
-ping
+### ping
 
 ```sh
 ansible all -i setup/inventory -m ping
@@ -125,25 +139,26 @@ rm ~/.ansible
 mkdir ~/.ansible
 ```
 
-Configure remote host
+# Configure remote host
 
 ```sh
 ansible-playbook -i setup/inventory_temp setup/ansible/configure.yml
 ```
 
-Change .env
+### Configure .env
 
-```sh
-ansible-playbook -i setup/inventory_temp setup/ansible/actions.yml -e "actions=change_env"
+```
+# setup/inventory_temp setup/ansible/actions.yml
+
+actions:
+  - change_env
 ```
 
-Change prompt
-
 ```sh
-ansible-playbook -i setup/inventory_temp setup/ansible/actions.yml -e "actions=zsh_prompt"
+ansible-playbook -i setup/inventory_temp setup/ansible/actions.yml
 ```
 
-> Configure `NODE_ENV`, `QUEUE_URL`, `GMAIL_USERNAME`, `GMAIL_APP_PASSWORD` and others if necessary.
+> Configure `NODE_ENV`, `DEV_EMAIL`, `DEV_EMAIL_APP_PASSWORD` and others manually if necessary.
 
 Set computer name on mac server
 
@@ -162,10 +177,3 @@ Continue to set up:
 [desktop](https://github.com/InboxMonster/rendering-ios/tree/main/desktop)
 
 [web](https://github.com/InboxMonster/rendering-ios/tree/main/web)
-
-# Server status
-
-```sh
-pm2 start dev/pingServersCommand.js --cron-restart="*/10 * * * *"
-pm2 restart pingServersCommand --cron-restart="*/10 * * * *"
-```
