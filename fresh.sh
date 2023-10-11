@@ -10,8 +10,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew update
 brew tap homebrew/bundle
-brew tap homebrew/cask-versions
 brew bundle --file ./Brewfile
+
+brew tap homebrew/cask-versions
+brew install android-studio-preview-beta
 
 mkdir $HOME/code
 
