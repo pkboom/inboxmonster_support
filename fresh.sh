@@ -12,8 +12,8 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
-brew tap homebrew/cask-versions
-brew install android-studio-preview-beta
+# brew tap homebrew/cask-versions
+# brew install android-studio-preview-beta
 
 mkdir $HOME/code
 
