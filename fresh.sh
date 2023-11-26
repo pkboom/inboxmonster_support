@@ -2,6 +2,9 @@
 
 echo "Setting up Mac..."
 
+echo "When node 22(even number: Active LTS) is release, change 'node@20' to 'node' in Brewfile."
+read -rp "Press enter to continue."
+
 # Install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -43,6 +46,6 @@ echo -e "${GREEN}Installing appium and stuff for ios rendering...${NC}"
 echo -e "${GREEN}✓ Done${NC}"
 echo
 
-read -p "Press enter to continue"
+read -rp "Press enter to continue"
 
 source $HOME/.macos
