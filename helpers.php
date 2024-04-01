@@ -1,5 +1,17 @@
 <?php
 
 if (! function_exists('hit')) {
-    logger('--------------------------------------------------');
+    function hit()
+    {
+        logger('--------------------------------------------------');
+    }
+}
+
+if (! function_exists('clear')) {
+    function clear()
+    {
+        $log = '/Users/keunbae/code/inboxmonster/storage/logs/laravel.log';
+
+        file_put_contents($log, '');
+    }
 }
