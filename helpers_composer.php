@@ -13,7 +13,11 @@ $composer['autoload']['files'] = [
     'helpers.php',
 ];
 
-// $composer['config']['platform-check'] = false;
+foreach ($composer['repositories'] as $key => $repository) {
+    if (! is_null($repository['packagist.org'])) {
+        unset($composer['repositories'][$key]);
+    }
+}
 
 file_put_contents($composerPath, json_encode($composer, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
 
