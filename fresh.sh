@@ -28,7 +28,6 @@ cp .env.example .env
 
 npm i
 
-npm install -g prettier # for desktop outlook
 npm install -g pm2
 npm install -g appium@latest
 appium driver install xcuitest
