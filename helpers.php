@@ -15,3 +15,10 @@ if (! function_exists('clear')) {
         file_put_contents($log, '');
     }
 }
+
+if (! function_exists('history')) {
+    function history()
+    {
+        pick(debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 5));
+    }
+}
