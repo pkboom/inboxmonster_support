@@ -1,6 +1,6 @@
 brew 'coreutils'
 brew 'git'
-brew 'node@20'
+brew 'node'
 brew 'ansible'
 brew 'wget'
 brew 'Python'
