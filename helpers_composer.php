@@ -13,6 +13,7 @@ $composer['autoload']['files'] = [
     'helpers.php',
 ];
 
+// remove => {"packagist.org": false}
 foreach ($composer['repositories'] as $key => $repository) {
     if (! is_null($repository['packagist.org'])) {
         unset($composer['repositories'][$key]);
