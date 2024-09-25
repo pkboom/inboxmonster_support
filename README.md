@@ -10,3 +10,9 @@ php artisan vendor:publish --provider="Pkboom\Pick\PickServiceProvider"
 
 config > pick.php
 http://pick-server-10.test/webhook
+
+# Fix mysql
+
+```sh
+sudo chown -R $(whoami):admin /opt/homebrew
+```
