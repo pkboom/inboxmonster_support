@@ -43,6 +43,7 @@ pip install pyautogui Pillow opencv-python
 
 # echo "export PATH=\"\$HOME/Library/Android/sdk/emulator:\$HOME/Library/Android/sdk/platform-tools:\$PATH\"" >>~/.zshrc
 
+# Symlink for java
 sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 GREEN='\033[1;32m'

@@ -8,6 +8,8 @@ brew 'cliclick'
 brew 'java'
 brew 'htop'
 brew 'ffmpeg'
+brew 'openjdk' 
+
 cask 'firefox'
 cask 'google-chrome'
 cask 'microsoft-edge'
