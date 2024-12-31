@@ -9,6 +9,7 @@ brew 'java'
 brew 'htop'
 brew 'ffmpeg'
 brew 'openjdk' 
+brew 'ncdu' 
 
 cask 'firefox'
 cask 'google-chrome'
