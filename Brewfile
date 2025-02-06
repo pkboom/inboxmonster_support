@@ -10,6 +10,7 @@ brew 'htop'
 brew 'ffmpeg'
 brew 'openjdk' 
 brew 'ncdu' 
+brew 'libimobiledevice' 
 
 cask 'firefox'
 cask 'google-chrome'
