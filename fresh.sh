@@ -32,9 +32,7 @@ npm install -g appium@latest
 appium driver install xcuitest
 appium driver install uiautomator2
 
-pip install pyautogui Pillow opencv-python
-
-# echo "export PATH=\"\$HOME/Library/Android/sdk/emulator:\$HOME/Library/Android/sdk/platform-tools:\$PATH\"" >>~/.zshrc
+pip3 install pyautogui PILLOW opencv-python --break-system-packages --user
 
 # Symlink for java
 # You can find this command by running `brew info openjdk`
