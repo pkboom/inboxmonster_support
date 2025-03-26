@@ -3,14 +3,12 @@
 $inboxmonsterPath = '/Users/keunbae/code/inboxmonster';
 $inboxmonsterSupportPath = '/Users/keunbae/code/inboxmonster_support';
 
-copy("{$inboxmonsterSupportPath}/helpers.php", "{$inboxmonsterPath}/helpers.php");
-
 $composerPath = "/{$inboxmonsterPath}/composer.json";
 
 $composer = json_decode(file_get_contents($composerPath), true);
 
 $composer['autoload']['files'] = [
-    'helpers.php',
+    '../inboxmonster_support/helpers.php',
 ];
 
 // remove => {"packagist.org": false}
