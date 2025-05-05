@@ -11,7 +11,7 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>$HOME/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew update
-brew tap homebrew/bundle
+# brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
 # brew tap homebrew/cask
