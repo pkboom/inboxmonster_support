@@ -7,9 +7,9 @@ $composerPath = "/{$inboxmonsterPath}/composer.json";
 
 $composer = json_decode(file_get_contents($composerPath), true);
 
-$composer['autoload']['files'] = [
-    '../inboxmonster_support/helpers.php',
-];
+// $composer['autoload']['files'] = [
+//     '../inboxmonster_support/helpers.php',
+// ];
 
 // remove => {"packagist.org": false}
 foreach ($composer['repositories'] as $key => $repository) {
