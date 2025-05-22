@@ -36,7 +36,7 @@ pip3 install pyautogui PILLOW opencv-python --break-system-packages --user
 
 # Symlink for java
 # You can find this command by running `brew info openjdk`
-sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+# sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 GREEN='\033[1;32m'
 NC='\033[0m' # No Color
