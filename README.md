@@ -17,5 +17,5 @@ http://pick-server-10.test/webhook
 # Fix mysql
 
 ```sh
-sudo chown -R $(whoami):admin /opt/homebrew
+sudo chown -R $(whoami) $(brew --prefix)
 ```
