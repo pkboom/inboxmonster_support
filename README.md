@@ -14,6 +14,30 @@ composer dump-autoload
 config > pick.php
 http://pick-server-10.test/webhook
 
+# Cron
+
+## Full Disk Access
+
+1. System Settings > Privacy & Security > Full Disk Access
+1. Add cron
+   - command + shift + G
+   - /usr/sbin/cron
+
+## Schedule
+
+```sh
+crontab -e
+```
+
+```sh
+#*/15 * * * * cd /Users/keunbae/code/rendering-ios && /opt/homebrew/bin/node dev/pingServersCommand.js --mail > /dev/null 2>&1
+*/15 * * * * cd /Users/keunbae/code/rendering-ios && /opt/homebrew/bin/node dev/getQueueAttributeCommand.js --attribute ApproximateNumberOfMessages --mail > /dev/null 2>&1
+0 9 * * 1,3,5 cd /Users/keunbae/code/dmarc-lambda && /opt/homebrew/bin/node dev/queryDmarcCommand.js --mail > /dev/null 2>&1
+0 9 * * 1,3,5 cd /Users/keunbae/code/dmarc-lambda && /opt/homebrew/bin/node dev/queryRecordCommand.js --mail > /dev/null 2>&1
+0 9 * * 1,3,5 cd /Users/keunbae/code/node-workers && /opt/homebrew/bin/node dev/queryTooManyCommand.js --mail > /dev/null 2>&1
+0 9 * * 1,3,5 cd /Users/keunbae/code/node-workers && /opt/homebrew/bin/node dev/queryTotalCommand.js --mail > /dev/null 2>&1
+```
+
 # Error
 
 ## `Require ext-imap` when running composer update
