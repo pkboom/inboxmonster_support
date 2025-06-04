@@ -9,6 +9,7 @@ composer update
 # composer require laravel/nova:4.32.9 --with-all-dependencies
 composer require --dev pkboom/laravel-tinker-on-vscode pkboom/laravel-pick
 composer dump-autoload
+php artisan vendor:publish --provider="Pkboom\Pick\PickServiceProvider"
 ```
 
 config > pick.php
