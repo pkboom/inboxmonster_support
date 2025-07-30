@@ -35,8 +35,8 @@ crontab -e
 */15 * * * * cd /Users/keunbae/code/rendering-ios && /opt/homebrew/bin/node dev/getQueueAttributeCommand.js --attribute ApproximateNumberOfMessages --mail > /dev/null 2>&1
 0 9 * * 1,3,5 cd /Users/keunbae/code/dmarc_lambda && /opt/homebrew/bin/node dev/queryDmarcCommand.js --mail > /dev/null 2>&1
 0 9 * * 1,3,5 cd /Users/keunbae/code/dmarc_lambda && /opt/homebrew/bin/node dev/queryRecordCommand.js --mail > /dev/null 2>&1
-0 9 * * 1,3,5 cd /Users/keunbae/code/node-workers && /opt/homebrew/bin/node dev/queryTooManyCommand.js --mail > /dev/null 2>&1
-0 9 * * 1,3,5 cd /Users/keunbae/code/node-workers && /opt/homebrew/bin/node dev/queryTotalCommand.js --mail > /dev/null 2>&1
+0 9 * * 1,2,3,4,5 cd /Users/keunbae/code/node-workers && /opt/homebrew/bin/node dev/queryTooManyCommand.js --mail > /dev/null 2>&1
+0 9 * * 1,2,3,4,5 cd /Users/keunbae/code/node-workers && /opt/homebrew/bin/node dev/queryTotalCommand.js --mail > /dev/null 2>&1
 ```
 
 # Error
