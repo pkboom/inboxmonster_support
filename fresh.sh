@@ -14,9 +14,6 @@ brew update
 # brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
-# brew tap homebrew/cask
-# brew install android-studio-preview-beta
-
 mkdir $HOME/code
 
 # git clone git@github.com:InboxMonster/rendering-ios.git $HOME/code/rendering-ios
