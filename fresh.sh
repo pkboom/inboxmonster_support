@@ -16,7 +16,7 @@ brew bundle --file ./Brewfile
 
 mkdir $HOME/code
 
-# git clone git@github.com:InboxMonster/rendering-ios.git $HOME/code/rendering-ios
+git clone git@github.com:InboxMonster/rendering-ios.git $HOME/code/rendering-ios
 
 cd $HOME/code/rendering-ios
 
